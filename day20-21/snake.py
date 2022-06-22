@@ -48,3 +48,8 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
+    def speed(self, speed):
+        for i in self.body_parts:
+            i.speed(speed)
+            
