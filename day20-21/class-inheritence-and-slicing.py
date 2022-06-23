@@ -28,3 +28,13 @@ nemo = Fish()
 nemo.swim()
 nemo.breathe()
 print(f"eyes = {nemo.eyes}")
+
+# slicing
+numbers = [1, 2, 3, 4, 5, 6]
+print(numbers[2:5:2])
+# will print things after number 2 to number 5. but will skip every 2nd element
+# ex - above code prints-  [3,5]
+print(numbers[::2])
+# go from start to end skipping every 2nd item
+# to go in reverse
+print(numbers[::-1])

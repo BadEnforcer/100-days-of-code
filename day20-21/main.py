@@ -12,7 +12,6 @@ screen.tracer(0)  # turning off tracers. we need to use update() method
 
 # making snake body
 snake = Snake()
-snake.speed(0)
 food = Food()
 scoreboard = ScoreBoard()
 
@@ -25,12 +24,27 @@ screen.onkey(snake.right, "Right")
 game_is_on = True
 while game_is_on:
     screen.update()  # updating screen
-    time.sleep(1)  # sleep it for 0.1 second
+    time.sleep(.1)  # sleep it for 0.1 second
     snake.move()
 
     # checking collision with food
     if snake.head.distance(food) < 15:
         print("Collected")
         food.refresh()
+        snake.extend()
         scoreboard.update_score()
+
+    # detect collision with wall
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+        game_is_on = False
+        scoreboard.game_over()
+
+    # detect collision with Tail
+    for body_part in snake.body_parts[1:]:
+        # if body_part == snake.head:  # first head is spawned. so the loop will error out
+        #     pass
+        # we are using slicing.
+        if snake.head.distance(body_part) < 10:
+            game_is_on = False
+            scoreboard.game_over()
 screen.exitonclick()

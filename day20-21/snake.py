@@ -5,6 +5,7 @@ UP = 90
 DOWN = 270
 LEFT = 180
 RIGHT = 0
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 
 
 # noinspection PyMethodFirstArgAssignment
@@ -15,16 +16,18 @@ class Snake:
         self.head = self.body_parts[0]  # snake head for quick access
 
     def create_snake(self):
-        x_cords = 0
-        for number in range(0, 3):
-            body_segment = Turtle("square")
-            body_segment.color("white")
-            body_segment.penup()
-            self.body_parts.append(body_segment)
+        for position in STARTING_POSITIONS:
+            self.add_segment(position)
 
-            if number >= 1:
-                x_cords -= 20
-                body_segment.goto(x_cords, 0)
+    def add_segment(self, position):
+        body_segment = Turtle("square")
+        body_segment.color("white")
+        body_segment.penup()
+        body_segment.goto(position)
+        self.body_parts.append(body_segment)
+
+    def extend(self):
+        self.add_segment(self.body_parts[-1].position())
 
     def move(self):
         for seg_num in range(len(self.body_parts) - 1, 0, -1):
@@ -33,6 +36,7 @@ class Snake:
             self.body_parts[seg_num].goto(x=new_x, y=new_y)
         self.body_parts[0].fd(MOVE_DISTANCE)
 
+    # player movement
     def up(self):
         if self.head.heading() != DOWN:
             self.head.setheading(UP)
@@ -48,8 +52,3 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
-
-    def speed(self, speed):
-        for i in self.body_parts:
-            i.speed(speed)
-            

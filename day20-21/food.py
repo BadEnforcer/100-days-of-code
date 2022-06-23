@@ -10,7 +10,6 @@ class Food(Turtle):
         self.shapesize(stretch_len=0.5, stretch_wid=0.5)  # you can adjust the shape size. we are setting it to 10x10
         self.color("blue")
         self.speed("fastest")
-        self.score = 0
         self.refresh()
 
     def refresh(self):
