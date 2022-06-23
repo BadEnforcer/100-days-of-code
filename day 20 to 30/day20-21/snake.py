@@ -9,6 +9,32 @@ STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 
 
 # noinspection PyMethodFirstArgAssignment
+def generate_border():
+    # initialize
+    border = Turtle("turtle")
+    border.speed("fastest")
+    border.color("white")
+    border.penup()
+
+    # drawing
+    border.goto(-295, -295)
+    border.pendown()
+    border.setheading(90)
+    border.fd(295 * 2)
+
+    border.setheading(0)
+    border.fd(295 * 2)
+
+    border.setheading(270)
+    border.fd(295 * 2)
+
+    border.setheading(180)
+    border.fd(295 * 2)
+
+    border.hideturtle()
+    print("Border generated.")
+
+
 class Snake:
     def __init__(self):
         self.body_parts = []
@@ -18,6 +44,7 @@ class Snake:
     def create_snake(self):
         for position in STARTING_POSITIONS:
             self.add_segment(position)
+        print("Snake initialized")
 
     def add_segment(self, position):
         body_segment = Turtle("square")
@@ -28,6 +55,7 @@ class Snake:
 
     def extend(self):
         self.add_segment(self.body_parts[-1].position())
+        print("Snake extended")
 
     def move(self):
         for seg_num in range(len(self.body_parts) - 1, 0, -1):

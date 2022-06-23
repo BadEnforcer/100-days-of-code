@@ -1,7 +1,7 @@
 import time
 from turtle import Screen
 from food import Food
-from snake import Snake
+from snake import Snake, generate_border
 from scoreboard import ScoreBoard
 
 screen = Screen()
@@ -12,6 +12,7 @@ screen.tracer(0)  # turning off tracers. we need to use update() method
 
 # making snake body
 snake = Snake()
+generate_border()
 food = Food()
 scoreboard = ScoreBoard()
 
@@ -22,9 +23,10 @@ screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 game_is_on = True
+print("Begin Moving!")
 while game_is_on:
     screen.update()  # updating screen
-    time.sleep(.1)  # sleep it for 0.1 second
+    time.sleep(0.090)  # sleep it for 0.1 second
     snake.move()
 
     # checking collision with food
@@ -38,13 +40,12 @@ while game_is_on:
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         game_is_on = False
         scoreboard.game_over()
-
+        print("wall collision")
     # detect collision with Tail
-    for body_part in snake.body_parts[1:]:
-        # if body_part == snake.head:  # first head is spawned. so the loop will error out
-        #     pass
-        # we are using slicing.
+    for body_part in snake.body_parts[1:]:  # slicing
         if snake.head.distance(body_part) < 10:
             game_is_on = False
+            print("collision with Tail")
             scoreboard.game_over()
+
 screen.exitonclick()
