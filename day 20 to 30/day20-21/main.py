@@ -4,6 +4,10 @@ from food import Food
 from snake import Snake, generate_border
 from scoreboard import ScoreBoard
 
+# bug report:
+# after losing score value is set to 0. cause of update method in scoreboard
+# fix it in later time.
+
 screen = Screen()
 screen.setup(height=600, width=600)
 screen.bgcolor("black")
@@ -38,14 +42,14 @@ while game_is_on:
 
     # detect collision with wall
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_is_on = False
-        scoreboard.game_over()
+        scoreboard.reset()
+        snake.reset()
         print("wall collision")
     # detect collision with Tail
     for body_part in snake.body_parts[1:]:  # slicing
         if snake.head.distance(body_part) < 10:
-            game_is_on = False
+            scoreboard.reset()
+            snake.reset()
             print("collision with Tail")
-            scoreboard.game_over()
 
 screen.exitonclick()
