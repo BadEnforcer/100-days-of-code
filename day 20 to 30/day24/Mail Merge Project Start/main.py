@@ -27,3 +27,4 @@ for name in names:
     with open(file_path, mode="w") as file:
         for i in letter_content:
             file.write(i)
+# we can just use strip(). it also works to remove newline.
