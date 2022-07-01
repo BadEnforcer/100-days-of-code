@@ -7,9 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d06a096a-21c6-464e-b0e1-75e6ca4d9749" name="Changes" comment="day24 finished.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d06a096a-21c6-464e-b0e1-75e6ca4d9749" name="Changes" comment="day25 finished." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -323,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656659764137</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="day25 finished.">
+      <created>1656696193444</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656696193444</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +353,8 @@
     <MESSAGE value="snake project update day 21" />
     <MESSAGE value="snake project update day 21 #update2" />
     <MESSAGE value="day24 finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="day24 finished." />
+    <MESSAGE value="day25 finished." />
+    <option name="LAST_COMMIT_MESSAGE" value="day25 finished." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
