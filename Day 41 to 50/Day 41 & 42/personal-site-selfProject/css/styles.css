@@ -1,0 +1,26 @@
+body {
+  background-color: #D2D79F
+}
+
+hr {
+  width: 5%;
+  border-color: gray;
+  border-width: 5px;
+  border-style: none;
+  border-top-style: dotted;
+}
+
+h1 {
+  color: #66BFEF;
+}
+
+h3 {
+  color: #66BFEF;
+}
+
+.nope {
+  color : green;
+}
+#heading {
+  color : yellow;
+}

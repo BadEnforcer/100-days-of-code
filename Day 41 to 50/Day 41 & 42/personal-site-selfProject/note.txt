@@ -1,0 +1,5 @@
+we learn html in this day.
+1.headings go from h1 to h6
+2.to make an text italic we can use <i> method but we should use <em> method.
+  it makes the text look more focused.
+3.same goes for making text bold, instead of <b> we should use <strong>

@@ -1,0 +1,1 @@
+Day 39, 40 are skipped due to paid API needing bank details

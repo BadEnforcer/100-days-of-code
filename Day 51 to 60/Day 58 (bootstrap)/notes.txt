@@ -1,0 +1,3 @@
+h1#title this means find an h1 which also have a id of 'title'
+
+h1 #title it means find an h1 and inside it find element with id title

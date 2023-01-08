@@ -1,0 +1,15 @@
+you should try to keep 40-60 characters per line.
+reducing the number of alignments we can make something look professional, it will look more fitting.
+
+# 5 Important things
+hierarchy
+alignment
+layout
+whitespace
+audience
+
+
+# 3 core aspects
+Color
+Typography
+UX design 1. Simplicity,2. Consistency, 3.Reading Patterns (F Pattern) (Z Pattern), 4. All Platform design, 5.Don't Use Dark Patterns
